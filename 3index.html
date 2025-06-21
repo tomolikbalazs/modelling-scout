@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kaya Models – Casting Jelentkezés</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Montserrat:wght@400;600&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: linear-gradient(135deg, #0a0a0a, #1a1a1a, #101010);
+      color: #ffd700;
+      overflow-x: hidden;
+    }
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      filter: brightness(0.3) contrast(1.1) saturate(1.2);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4em;
+      text-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+      animation: fadeInDown 1.5s ease-out;
+      z-index: 1;
+    }
+    .countdown {
+      font-size: 1.5em;
+      margin-top: 20px;
+      animation: fadeIn 2s ease-out;
+      z-index: 1;
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .container {
+      padding: 60px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 10px;
+    }
+    .subtext {
+      text-align: center;
+      font-size: 1.1em;
+      margin-bottom: 30px;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: fadeIn 1.8s ease-out;
+    }
+    input,
+    textarea {
+      padding: 15px;
+      font-size: 1em;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background-color: #222;
+      color: #ffd700;
+    }
+    input::placeholder,
+    textarea::placeholder {
+      color: #aaa;
+    }
+    input:focus,
+    textarea:focus {
+      border-color: #f77f00;
+      outline: none;
+    }
+    button {
+      padding: 14px;
+      background: #f77f00;
+      color: white;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1em;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #c35e00;
+    }
+    .highlight {
+      background-color: #1e1e1e;
+      padding: 30px;
+      border-left: 5px solid #f77f00;
+      margin-top: 40px;
+      border-radius: 10px;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+    .contact {
+      margin-top: 30px;
+      font-size: 1.05em;
+      background-color: #141414;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      border: 1px solid #333;
+    }
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      padding: 40px 20px;
+      color: #888;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <video autoplay muted loop playsinline>
+      <source src="https://videos.pexels.com/video-files/17561863/17561863-hd_1920_1080_30fps.mp4" type="video/mp4" />
+    </video>
+    <h1>Kaya Models – Casting Jelentkezés</h1>
+    <div class="countdown" id="countdown">Hátralevő idő a castingig: Betöltés...</div>
+  </div>
+
+  <div class="container">
+    <h2>Indítsd el nemzetközi modellkarriered</h2>
+    <p class="subtext">
+      Jelentkezz castingunkra, és akár 25 különböző országba is eljuthatsz profi modellként!<br>
+      Kezdő modellek közvetítését is vállaljuk, ingyen portfólió készítésével.
+    </p>
+
+    <form action="mailto:jelentkezes@kaya-models.com" method="POST" enctype="multipart/form-data">
+      <input type="text" name="Név" placeholder="Teljes név" required />
+      <input type="number" name="Életkor" placeholder="Életkor" min="14" max="99" required />
+      <input type="text" name="Magasság" placeholder="Magasság (cm)" required />
+      <input type="email" name="Email" placeholder="Email cím" required />
+      <input type="tel" name="Telefon" placeholder="Telefonszám" required />
+      <input type="text" name="Szemszín" placeholder="Szem szín" required />
+      <input type="text" name="Hajszín" placeholder="Haj szín" required />
+      <input type="text" name="Méretek" placeholder="Mell / Derék / Csípő / Láb (cm)" required />
+      <label>Portré fotó (szemből): <input type="file" name="kep_szembol" accept="image/*" required /></label>
+      <label>Profil fotó (oldalról): <input type="file" name="kep_oldalrol" accept="image/*" required /></label>
+      <label>Egész alakos fotó: <input type="file" name="kep_egesz" accept="image/*" required /></label>
+      <textarea name="Üzenet" placeholder="Írj magadról pár szót (opcionális)..." rows="4"></textarea>
+      <button type="submit">Jelentkezem</button>
+    </form>
+
+    <div class="highlight">
+      <p><strong>🎯 Casting időpont:</strong> 2025. július 27. (vasárnap)</p>
+      <p><strong>🕘 Idő:</strong> 10:00 – 18:00</p>
+      <p><strong>📍 Helyszín:</strong> 1145 Budapest, Erzsébet királyné útja 11.</p>
+      <p><strong>🎁 Ajándék:</strong> Ingyen portfólió fotózás a casting során</p>
+    </div>
+
+    <div class="contact">
+      <p><strong>Kapcsolat:</strong></p>
+      <p>Email: tomolik.balazs.km@gmail.com</p>
+      <p>Tel.: +36 70 630 0708</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Kaya Models – Készítette: Tomolik Balázs – Minden jog fenntartva
+  </div>
+
+  <script>
+    const countdown = document.getElementById("countdown");
+    const targetDate = new Date("2025-07-27T10:00:00").getTime();
+    setInterval(() => {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+      if (distance <= 0) {
+        countdown.innerText = "Casting nap van! Gyere el!";
+        return;
+      }
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      countdown.innerText = `Hátralevő idő a castingig: ${days} nap, ${hours} óra, ${minutes} perc, ${seconds} mp`;
+    }, 1000);
+  </script>
+</body>
+</html>
